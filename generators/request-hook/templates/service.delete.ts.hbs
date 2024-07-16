@@ -1,0 +1,18 @@
+// import { queryClient } from '@path-to-provider';
+// import { errorAlert } from '@path-to-alert-func';
+// import { successAlert } from '@path-to-alert-func';
+import { api } from '../api';
+
+export type Payload = {};
+export type Response = {};
+
+
+export const {{service}} = async (payload: Payload): Promise<Response | undefined> => {
+  try {
+    const { data } = await api.delete('/delete', payload);
+    // successAlert(data.message);
+    return data;
+  } catch (error) {
+    // errorAlert(error.response.data.message);
+  }
+};
