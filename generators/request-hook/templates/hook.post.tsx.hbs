@@ -1,0 +1,11 @@
+import { {{service}}, Payload } from '@/services/{{folder}}/{{service}}.service.ts';
+import { useMutation } from '@tanstack/react-query';
+
+export const use{{pascalCase service}} = () => {
+  return useMutation({
+    mutationFn: async (payload: Payload) => {
+      return await {{service}}(payload);
+    },
+    throwOnError: false
+  });
+};
