@@ -1,0 +1,17 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { {{pascalCase name}} } from '.';
+
+const title = {{#if group}}
+  '{{group}}/{{pascalCase name}}';
+{{else}}
+  '{{pascalCase name}}';
+{{/if}}
+
+export default {
+  title,
+  component: {{pascalCase name}},
+} as Meta;
+
+export const Default: StoryObj = {
+  args: {},
+};
