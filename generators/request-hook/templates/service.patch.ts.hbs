@@ -6,12 +6,14 @@ import { api } from '../api';
 export type Payload = {};
 export type Response = {};
 
-export const {{service}} = async (payload: Payload): Promise<Response | undefined> => {
+export const {{service}} = async (
+  payload: Payload
+): Promise<Response | undefined> => {
   try {
-    const { data } = await api.delete('/delete', payload);
+    const { data } = await api.patch('/patch', payload);
     // successAlert(data.message);
     return data;
-  } catch (error) {
+  } catch (error: any) {
     // errorAlert(error.response.data.message);
   }
 };
