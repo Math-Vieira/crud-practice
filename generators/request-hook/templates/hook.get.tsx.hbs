@@ -1,0 +1,13 @@
+import { {{service}} } from '@/services/{{folder}}/{{service}}.service.ts';
+import { useQuery } from '@tanstack/react-query';
+
+export const queryKey = ['{{service}}'];
+
+export const use{{pascalCase service}} = (path: string) => {
+  return useQuery({
+    queryKey,
+    queryFn: async () => {
+      return await {{service}}(path);
+    }
+  });
+};

@@ -1,0 +1,17 @@
+// import { queryClient } from '@path-to-provider';
+// import { errorAlert } from '@path-to-alert-func';
+// import { successAlert } from '@path-to-alert-func';
+import { api } from '../api';
+
+type Response = {};
+
+export const {{service}} = async (path: string): Promise<Response | undefined> => {
+  try {
+    const { data } = await api.get(`/${path}`);
+    // successAlert(data.message);
+
+    return data;
+  } catch (error) {
+    // errorAlert(error.response.data.message);
+  }
+};
