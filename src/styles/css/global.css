@@ -6,12 +6,12 @@
   box-sizing: border-box;
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
   text-decoration: none;
-  display:inline;
+  display: inline;
   display: block;
   width: fit-content;
 }
@@ -20,4 +20,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.centralizer {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
