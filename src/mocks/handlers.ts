@@ -9,7 +9,7 @@ type customer = {
   number: string;
 };
 
-const customers: customer[] = [
+let customers: customer[] = [
   {
     id: '1',
     name: 'Cliente de teste',
@@ -35,17 +35,19 @@ export const handlers = [
   //   return HttpResponse.json({ success: true });
   // }),
 
-  // http.delete('/api/customer/:id', ({ params }) => {
-  //   const customerId = params.id;
-  //   customers = customers.filter((e) => e.id !== customerId);
+  http.delete('/api/customer/:id', ({ params }) => {
+    const customerId = params.id;
+    customers = customers.filter((e) => e.id !== customerId);
 
-  //   return HttpResponse.json({ success: true });
-  // }),
+    return HttpResponse.json({ success: true });
+  }),
 
-  http.post('/api/customer', ({ request }) => {
-    const data = request.formData();
-    console.log('vinicin brabo');
-    console.log(data);
+  http.post('/api/customer', async ({ request }) => {
+    const data = await request.json();
+    customers.unshift({
+      ...(data as customer),
+      id: Math.random().toString(36)
+    });
 
     return HttpResponse.json({ success: true });
   })

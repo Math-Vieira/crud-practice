@@ -4,6 +4,7 @@ import { TextInput } from '../TextInput';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Inputs, inputSchema } from './utils/validation-schema';
+import { useCreateCustomer } from '@/hooks/request-hooks/customer/useCreateCustomer';
 
 type Props = {
   title: string;
@@ -22,8 +23,10 @@ export const CustomerModal = ({
   onCancelClick
 }: Props) => {
   const methods = useForm<Inputs>({ resolver: zodResolver(inputSchema) });
+  const createCustomer = useCreateCustomer();
   const onSubmit = methods.handleSubmit(async (data) => {
-    console.log(data);
+    const result = await createCustomer.mutateAsync(data);
+    if (result) onCancelClick?.();
   });
 
   return (
