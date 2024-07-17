@@ -2,6 +2,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './query-client';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '@/styles/styled-components/themes';
+import { Toaster } from 'react-hot-toast';
 
 type Props = {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ type Props = {
 export const GlobalProvider = ({ children }: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
+      <Toaster position="bottom-right" />
       <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
     </QueryClientProvider>
   );
