@@ -18,6 +18,7 @@
 <p>Este projeto é um CRUD de cadastro de clientes simples, desenvolvido com foco em eficiência e boas práticas de desenvolvimento. Utilizando tecnologias modernas como React Hook Form para gerenciamento de formulários, TypeScript para tipagem estática, Styled Components para estilização, e React Query para gerenciamento de estados assíncronos. A validação de dados é feita com Zod, e a comunicação com a API é realizada através do Axios. O projeto também conta Mocks feitos com MSW e documentação de componentes feita utilizando Storybook.</p>
 
 <a href="https://www.figma.com/design/lUObiaX9k8GA1VfVre6Cml/customer-register?node-id=1-11&t=Rq6ZLxnhqdookpiE-1">Clique aqui para ver o design do projeto</a>
+<a href="https://www.youtube.com/watch?v=ZRoLouEZtvM&ab_channel=MatheusVieira">Clique aqui para um vídeo a respeito doprojeto</a>
 <p>Ps: O projeto não seguiu o design à risca, mas está fortemente baseado nele.</p>
 
 <h2>:grinning: Como utilizar</h2>
