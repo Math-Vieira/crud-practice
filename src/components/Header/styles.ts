@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   padding: 1rem 0;
   box-shadow: ${({ theme }) => theme.headerBoxShadow};
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
 `;
 
 export const LogoContainer = styled.a`
