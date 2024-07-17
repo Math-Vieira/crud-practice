@@ -18,7 +18,7 @@ export const getCustomers = async (
 ): Promise<Response | undefined> => {
   try {
     const { data } = await api.get(`/customer${path ? '/' + path : ''}`);
-    toast.success('Clientes listados com sucesso');
+    toast.success('Lista de clientes atualizada com sucesso');
 
     return data;
   } catch (error: any) {

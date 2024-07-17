@@ -25,15 +25,21 @@ export const handlers = [
     return HttpResponse.json(customers);
   }),
 
-  // http.put('/api/customer/:id', ({ params, request }) => {
-  //   const data: customer = request.formData();
-  //   const customerId = params.id;
-  //   const customerIndex = customers.findIndex((e) => e.id === customerId);
+  http.put('/api/customer/:id', async ({ params, request }) => {
+    const data = await request.json();
+    const customerId = params.id;
+    const updatedCustomer = {
+      ...(data as customer),
+      id: customerId
+    };
 
-  //   customers[customerIndex] = data;
+    customers = customers.map((e) => {
+      if (e.id !== customerId) return e;
+      return updatedCustomer as customer;
+    });
 
-  //   return HttpResponse.json({ success: true });
-  // }),
+    return HttpResponse.json({ success: true });
+  }),
 
   http.delete('/api/customer/:id', ({ params }) => {
     const customerId = params.id;

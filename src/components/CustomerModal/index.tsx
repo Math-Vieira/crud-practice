@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Inputs, inputSchema } from './utils/validation-schema';
 import { useCreateCustomer } from '@/hooks/request-hooks/customer/useCreateCustomer';
 import { Customer } from '@/services/customer/getCustomers.service';
+import { useUpdateCustomer } from '@/hooks/request-hooks/customer/useUpdateCustomer';
 
 type Props = {
   title: string;
@@ -15,6 +16,7 @@ type Props = {
   confirmButtonText?: string;
   onCancelClick?: () => void;
   initialValues?: Customer;
+  editModal?: boolean;
 };
 
 export const CustomerModal = ({
@@ -24,15 +26,22 @@ export const CustomerModal = ({
   confirmButtonText,
   onCancelClick,
   initialValues,
-  disabled
+  disabled,
+  editModal
 }: Props) => {
   const methods = useForm<Inputs>({
     resolver: zodResolver(inputSchema),
     defaultValues: initialValues ? initialValues : {}
   });
   const createCustomer = useCreateCustomer();
+  const editCustomer = useUpdateCustomer(initialValues?.id);
   const onSubmit = methods.handleSubmit(async (data) => {
-    const result = await createCustomer.mutateAsync(data);
+    //Config correct request
+    const request = editModal
+      ? editCustomer.mutateAsync
+      : createCustomer.mutateAsync;
+
+    const result = await request(data);
     if (result) onCancelClick?.();
   });
 

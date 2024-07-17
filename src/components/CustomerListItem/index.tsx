@@ -16,6 +16,7 @@ type Props = {
 export const CustomerListItem = ({ name, id, customer }: Props) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
 
   return (
     <>
@@ -26,7 +27,7 @@ export const CustomerListItem = ({ name, id, customer }: Props) => {
         </S.UserIconContainer>
         <S.ActionButtonContainer>
           <ActionButton type="view" onClick={() => setShowViewModal(true)} />
-          <ActionButton type="edit" />
+          <ActionButton type="edit" onClick={() => setShowEditModal(true)} />
           <ActionButton type="trash" onClick={() => setShowDeleteModal(true)} />
         </S.ActionButtonContainer>
       </S.ListItem>
@@ -47,6 +48,16 @@ export const CustomerListItem = ({ name, id, customer }: Props) => {
           onCancelClick={() => {
             setShowViewModal(false);
           }}
+        />
+      )}
+      {showEditModal && (
+        <CustomerModal
+          title="Edição de cliente"
+          initialValues={customer}
+          onCancelClick={() => {
+            setShowEditModal(false);
+          }}
+          editModal
         />
       )}
     </>
