@@ -1,9 +1,5 @@
 import * as S from './styles';
 
 export const Footer = () => {
-  return (
-    <S.Wrapper>
-      <h1>Footer</h1>
-    </S.Wrapper>
-  );
+  return <S.Wrapper>Cadastro de clientes - Matheus Vieira</S.Wrapper>;
 };
