@@ -53,6 +53,7 @@ export const CustomerModal = ({
       ConfirmButtonText={confirmButtonText}
       onSubmit={onSubmit}
       onCancel={onCancelClick}
+      loading={createCustomer.isPending || editCustomer.isPending}
       modalBody={
         <FormProvider {...methods}>
           <S.Body>

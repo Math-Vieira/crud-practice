@@ -12,6 +12,7 @@ type Props = {
   hasForm?: boolean;
   showConfirmButton?: boolean;
   onSubmit?: () => void;
+  loading?: boolean;
 };
 
 type BodyContainerProps = {
@@ -29,7 +30,8 @@ export const Modal = ({
   onConfirm,
   onCancel,
   showConfirmButton = true,
-  onSubmit
+  onSubmit,
+  loading
 }: Props) => {
   return (
     <S.Wrapper>
@@ -44,7 +46,11 @@ export const Modal = ({
             {cancelButtonText}
           </Button>
           {showConfirmButton && (
-            <Button onClick={onConfirm} type={hasForm ? 'submit' : 'button'}>
+            <Button
+              onClick={onConfirm}
+              type={hasForm ? 'submit' : 'button'}
+              loading={loading}
+            >
               {ConfirmButtonText}
             </Button>
           )}
