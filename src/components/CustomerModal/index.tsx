@@ -5,6 +5,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Inputs, inputSchema } from './utils/validation-schema';
 import { useCreateCustomer } from '@/hooks/request-hooks/customer/useCreateCustomer';
+import { Customer } from '@/services/customer/getCustomers.service';
 
 type Props = {
   title: string;
@@ -13,6 +14,7 @@ type Props = {
   cancelButtonText?: string;
   confirmButtonText?: string;
   onCancelClick?: () => void;
+  initialValues?: Customer;
 };
 
 export const CustomerModal = ({
@@ -20,9 +22,14 @@ export const CustomerModal = ({
   showConfirmButton,
   cancelButtonText,
   confirmButtonText,
-  onCancelClick
+  onCancelClick,
+  initialValues,
+  disabled
 }: Props) => {
-  const methods = useForm<Inputs>({ resolver: zodResolver(inputSchema) });
+  const methods = useForm<Inputs>({
+    resolver: zodResolver(inputSchema),
+    defaultValues: initialValues ? initialValues : {}
+  });
   const createCustomer = useCreateCustomer();
   const onSubmit = methods.handleSubmit(async (data) => {
     const result = await createCustomer.mutateAsync(data);
@@ -44,22 +51,31 @@ export const CustomerModal = ({
               label="Nome"
               placeholder="Digite o nome do cliente..."
               name="name"
+              disabled={disabled}
             />
             <TextInput
               label="E-mail"
               placeholder="Digite o email do cliente..."
               name="email"
+              disabled={disabled}
             />
-            <TextInput label="Cidade" placeholder="Ex: São paulo" name="city" />
+            <TextInput
+              label="Cidade"
+              placeholder="Ex: São paulo"
+              name="city"
+              disabled={disabled}
+            />
             <TextInput
               label="Rua"
               placeholder="Ex: Rua Paulo de Souza"
               name="street"
+              disabled={disabled}
             />
             <TextInput
               label="Número da casa"
               placeholder="Ex: 43"
               name="number"
+              disabled={disabled}
             />
           </S.Body>
         </FormProvider>

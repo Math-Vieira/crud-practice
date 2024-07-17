@@ -2,7 +2,7 @@
 import toast from 'react-hot-toast';
 import { api } from '../';
 
-type customer = {
+export type Customer = {
   id: string;
   name: string;
   email: string;
@@ -11,7 +11,7 @@ type customer = {
   number: string;
 };
 
-type Response = customer[];
+type Response = Customer[];
 
 export const getCustomers = async (
   path?: string

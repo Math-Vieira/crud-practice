@@ -5,12 +5,14 @@ type Props = {
   label?: string;
   placeholder?: string;
   name: string;
+  disabled?: boolean;
 };
 
 export const TextInput = ({
   label = 'Input label',
   placeholder = 'Input placeholder',
-  name
+  name,
+  disabled
 }: Props) => {
   const { register, formState } = useFormContext();
   const { errors } = formState;
@@ -24,6 +26,7 @@ export const TextInput = ({
         placeholder={placeholder}
         {...register(name)}
         $errorInput={!!errorMessage}
+        disabled={disabled}
       />
       {formState.errors[name] && <S.Error>{errorMessage.toString()}</S.Error>}
     </S.Wrapper>

@@ -15,6 +15,7 @@ export const CustomerList = () => {
               key={customer.id}
               name={customer.name}
               id={customer.id}
+              customer={customer}
             />
           );
         })}

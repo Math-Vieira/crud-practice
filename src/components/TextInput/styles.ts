@@ -17,6 +17,10 @@ export const Input = styled.input<{ $errorInput: boolean }>`
       ${({ theme, $errorInput }) =>
         $errorInput ? theme.error : theme.darkGreen};
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 export const Label = styled.label`
