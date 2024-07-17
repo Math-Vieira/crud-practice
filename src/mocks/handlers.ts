@@ -9,7 +9,16 @@ type customer = {
   number: string;
 };
 
-const customers: customer[] = [];
+const customers: customer[] = [
+  {
+    id: '1',
+    name: 'Cliente de teste',
+    email: 'teste@gmail.com',
+    city: 'São Paulo',
+    street: 'Rua teste',
+    number: '123'
+  }
+];
 
 export const handlers = [
   http.get('/api/customer', () => {

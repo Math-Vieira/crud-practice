@@ -40,7 +40,7 @@ export const Modal = ({
         </S.ModalTitleContainer>
         <S.ModalBody>{modalBody}</S.ModalBody>
         <S.ButtonContainer>
-          <Button buttonStyle="outline" onClick={onCancel}>
+          <Button buttonStyle="outline" onClick={onCancel} type="button">
             {cancelButtonText}
           </Button>
           {showConfirmButton && (

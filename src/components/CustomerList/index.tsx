@@ -1,10 +1,22 @@
+import { useGetCustomers } from '@/hooks/request-hooks/customer/useGetCustomers';
 import { CustomerListItem } from '../CustomerListItem';
 import * as S from './styles';
 
 export const CustomerList = () => {
+  const { data } = useGetCustomers();
+
   return (
     <S.Wrapper>
-      <CustomerListItem name="Matheus Vieira" id="12" />
+      {data &&
+        data.map((customer) => {
+          return (
+            <CustomerListItem
+              key={customer.id}
+              name={customer.name}
+              id={customer.id}
+            />
+          );
+        })}
     </S.Wrapper>
   );
 };
