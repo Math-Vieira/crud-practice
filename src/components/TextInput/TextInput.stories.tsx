@@ -9,5 +9,10 @@ export default {
 } as Meta;
 
 export const Default: StoryObj = {
-  args: {}
+  args: {
+    label: 'Input label',
+    placeholder: 'Input placeholder',
+    name: 'inputName',
+    disabled: false
+  }
 };
