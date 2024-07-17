@@ -45,3 +45,6 @@
 </pre>
 
 <p>Após realizar esta sequência de passos a aplicação já estará pronta para ser utilizada </p>
+
+<h2>:bookmark_tabs: Mais detalhes</h2>
+<p>O projeto conta com uma automação para criação de request-hooks e também para criação de componentes, além de também estar configurado com o husky, que formata os arquivos e valida de acordo com as regras do eslint configuradas no projeto. O husky também está configurado para rodar os testes sempre que um push for feito, evitando que o código suba para o repositório remoto caso algum teste tenha quebrado.</p>
