@@ -7,7 +7,7 @@ const defineCursor = (loading: boolean, disabled: boolean) => {
 };
 
 export const WrapperDefault = styled.button<{
-  loading: boolean;
+  $loading: boolean;
   disabled: boolean;
 }>`
   background-color: ${({ theme }) => theme.lightGreen};
@@ -16,7 +16,7 @@ export const WrapperDefault = styled.button<{
   border: none;
   font-size: 0.6rem;
   color: ${({ theme }) => theme.secondaryTextColor};
-  cursor: ${({ loading, disabled }) => defineCursor(loading, disabled)};
+  cursor: ${({ $loading, disabled }) => defineCursor($loading, disabled)};
   font-weight: lighter;
   font-size: 1.2rem;
 
@@ -26,7 +26,7 @@ export const WrapperDefault = styled.button<{
 `;
 
 export const WrapperOutline = styled.button<{
-  loading: boolean;
+  $loading: boolean;
   disabled: boolean;
 }>`
   background-color: transparent;
@@ -35,7 +35,7 @@ export const WrapperOutline = styled.button<{
   border: 1px solid ${({ theme }) => theme.lightGreen};
   font-size: 0.6rem;
   color: ${({ theme }) => theme.lightGreen};
-  cursor: ${({ loading, disabled }) => defineCursor(loading, disabled)};
+  cursor: ${({ $loading, disabled }) => defineCursor($loading, disabled)};
   font-weight: lighter;
   font-size: 1.2rem;
 

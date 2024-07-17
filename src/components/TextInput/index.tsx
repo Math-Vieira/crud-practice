@@ -23,7 +23,7 @@ export const TextInput = ({
       <S.Input
         placeholder={placeholder}
         {...register(name)}
-        error={!!errorMessage}
+        $errorInput={!!errorMessage}
       />
       {formState.errors[name] && <S.Error>{errorMessage.toString()}</S.Error>}
     </S.Wrapper>

@@ -2,18 +2,20 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div``;
 
-export const Input = styled.input<{ error: boolean }>`
+export const Input = styled.input<{ $errorInput: boolean }>`
   width: 100%;
   padding: 5px;
   border-radius: 3px;
   outline: none;
   border: 1px solid
-    ${({ theme, error }) => (error ? theme.error : theme.lightGreen)};
+    ${({ theme, $errorInput }) =>
+      $errorInput ? theme.error : theme.lightGreen};
   font-size: 1rem;
 
   &:focus {
     border: 1px solid
-      ${({ theme, error }) => (error ? theme.error : theme.darkGreen)};
+      ${({ theme, $errorInput }) =>
+        $errorInput ? theme.error : theme.darkGreen};
   }
 `;
 

@@ -17,7 +17,7 @@ export const Button = ({
     buttonStyle === 'default' ? S.WrapperDefault : S.WrapperOutline;
 
   return (
-    <Wrapper disabled={disabled || loading} loading={loading}>
+    <Wrapper disabled={disabled || loading} $loading={!!loading}>
       {children}
     </Wrapper>
   );
