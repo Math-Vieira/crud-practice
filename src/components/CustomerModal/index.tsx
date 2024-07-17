@@ -11,13 +11,15 @@ type Props = {
   showConfirmButton?: boolean;
   cancelButtonText?: string;
   confirmButtonText?: string;
+  onCancelClick?: () => void;
 };
 
 export const CustomerModal = ({
   title,
   showConfirmButton,
   cancelButtonText,
-  confirmButtonText
+  confirmButtonText,
+  onCancelClick
 }: Props) => {
   const methods = useForm<Inputs>({ resolver: zodResolver(inputSchema) });
   const onSubmit = methods.handleSubmit(async (data) => {
@@ -31,6 +33,7 @@ export const CustomerModal = ({
       cancelButtonText={cancelButtonText}
       ConfirmButtonText={confirmButtonText}
       onSubmit={onSubmit}
+      onCancel={onCancelClick}
       modalBody={
         <FormProvider {...methods}>
           <S.Body>

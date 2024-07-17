@@ -13,13 +13,19 @@ export const Button = ({
   buttonStyle = 'default',
   loading = false,
   disabled = false,
-  type = 'button'
+  type = 'button',
+  ...props
 }: Props) => {
   const Wrapper =
     buttonStyle === 'default' ? S.WrapperDefault : S.WrapperOutline;
 
   return (
-    <Wrapper disabled={disabled || loading} $loading={!!loading} type={type}>
+    <Wrapper
+      disabled={disabled || loading}
+      $loading={!!loading}
+      type={type}
+      {...props}
+    >
       {children}
     </Wrapper>
   );
