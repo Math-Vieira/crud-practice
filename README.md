@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+<h1>:blue_car: Customer register</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="display: inline_block">
+  <img src="https://img.shields.io/badge/TypeScript-brightgreen"/>
+  <img src="https://img.shields.io/badge/ReactJs-brightgreen"/>
+  <img src="https://img.shields.io/badge/Styled Components-brightgreen"/>
+  <img src="https://img.shields.io/badge/React hook form-brightgreen"/>
+  <img src="https://img.shields.io/badge/Zod-brightgreen"/>
+  <img src="https://img.shields.io/badge/React query-brightgreen"/>
+  <img src="https://img.shields.io/badge/React router-brightgreen"/>
+  <img src="https://img.shields.io/badge/MSW-brightgreen"/>
+  <img src="https://img.shields.io/badge/Storybook-brightgreen"/>
+</div>
 
-Currently, two official plugins are available:
+<img src ="https://portfolio-images-mv.s3.amazonaws.com/image.png" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>:bookmark_tabs: Descrição</h2>
+<p>Este projeto é um CRUD de cadastro de clientes simples, desenvolvido com foco em eficiência e boas práticas de desenvolvimento. Utilizando tecnologias modernas como React Hook Form para gerenciamento de formulários, TypeScript para tipagem estática, Styled Components para estilização, e React Query para gerenciamento de estados assíncronos. A validação de dados é feita com Zod, e a comunicação com a API é realizada através do Axios. O projeto também conta Mocks feitos com MSW e documentação de componentes feita utilizando Storybook.</p>
 
-## Expanding the ESLint configuration
+<a href="https://www.figma.com/design/lUObiaX9k8GA1VfVre6Cml/customer-register?node-id=1-11&t=Rq6ZLxnhqdookpiE-1">Clique aqui para ver o design do projeto</a>
+<p>Ps: O projeto não seguiu o design à risca, mas está fortemente baseado nele.</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<h2>:grinning: Como utilizar</h2>
 
-- Configure the top-level `parserOptions` property like this:
+<h3>1. Clone o repositório:</h3>
+<pre>
+  <code>
+    git clone https://github.com/Math-Vieira/crud-practice
+  </code>
+</pre>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+<h3>2. Entre no repositório clonado e instale as dependências:</h3>
+<pre>
+  <code>
+    pnpm i
+  </code>
+</pre>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<h3>3. Inicie o servidor React</h3>
+<pre>
+  <code>
+    pnpm run dev
+  </code>
+</pre>
+
+<p>Após realizar esta sequência de passos a aplicação já estará pronta para ser utilizada </p>
