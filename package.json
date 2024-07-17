@@ -13,7 +13,7 @@
     "preinstall": "npx only-allow pnpm",
     "generate:component": "npx plop --plopfile generators/component/plopfile.mjs",
     "generate:httphook": "npx plop --plopfile generators/request-hook/plopfile.mjs",
-    "test": "jest --verbose --noStackTrace"
+    "test": "jest --verbose --noStackTrace || exit 1"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.1",

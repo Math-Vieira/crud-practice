@@ -13,4 +13,10 @@ export const inputSchema = z.object({
     })
 });
 
-export type Inputs = z.infer<typeof inputSchema>;
+export type Inputs = {
+  name: string;
+  email: string;
+  city: string;
+  street: string;
+  number: string;
+};

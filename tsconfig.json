@@ -4,7 +4,9 @@
     "jsx": "react-jsx",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "references": [
     {

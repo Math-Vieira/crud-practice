@@ -21,8 +21,9 @@ export const TextInput = ({
 
   return (
     <S.Wrapper>
-      <S.Label>{label}</S.Label>
+      <S.Label htmlFor={name}>{label}</S.Label>
       <S.Input
+        id={name}
         placeholder={placeholder}
         {...register(name)}
         $errorInput={!!errorMessage}
