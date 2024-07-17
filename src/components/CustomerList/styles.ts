@@ -9,4 +9,13 @@ export const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const NotFoundText = styled.p`
+  font-size: 2rem;
+  font-weight: bold;
 `;

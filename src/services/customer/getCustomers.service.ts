@@ -18,10 +18,10 @@ export const getCustomers = async (
 ): Promise<Response | undefined> => {
   try {
     const { data } = await api.get(`/customer${path ? '/' + path : ''}`);
-    toast.success(data.message);
+    toast.success('Clientes listados com sucesso');
 
     return data;
   } catch (error: any) {
-    toast.error(error.response.data.message);
+    toast.error('Houve um erro na busca de Clientes');
   }
 };
