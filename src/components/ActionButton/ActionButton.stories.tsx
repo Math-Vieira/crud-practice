@@ -9,5 +9,19 @@ export default {
 } as Meta;
 
 export const Default: StoryObj = {
-  args: {}
+  args: {
+    type: 'edit'
+  }
+};
+
+export const View: StoryObj = {
+  args: {
+    type: 'view'
+  }
+};
+
+export const Trash: StoryObj = {
+  args: {
+    type: 'trash'
+  }
 };
