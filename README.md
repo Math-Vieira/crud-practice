@@ -2,6 +2,7 @@
 
 <div style="display: inline_block">
   <img src="https://img.shields.io/badge/TypeScript-brightgreen"/>
+  <img src="https://img.shields.io/badge/AWS AMPLIFY-brightgreen"/>
   <img src="https://img.shields.io/badge/ReactJs-brightgreen"/>
   <img src="https://img.shields.io/badge/Styled Components-brightgreen"/>
   <img src="https://img.shields.io/badge/React hook form-brightgreen"/>
@@ -20,6 +21,8 @@
 <a href="https://www.figma.com/design/lUObiaX9k8GA1VfVre6Cml/customer-register?node-id=1-11&t=Rq6ZLxnhqdookpiE-1">Clique aqui para ver o design do projeto</a> |
 <a href="https://www.youtube.com/watch?v=ZRoLouEZtvM&ab_channel=MatheusVieira">Clique aqui para um vídeo a respeito do projeto</a>
 <p>Ps: O projeto não seguiu o design à risca, mas está fortemente baseado nele.</p>
+
+<a href="https://master.d2tg3gaujff388.amplifyapp.com/">Gostaria de ver uma versão do projeto rodando no seviço AWS AMPLIFY? Clique aqui</a>
 
 <h2>:grinning: Como utilizar</h2>
 
