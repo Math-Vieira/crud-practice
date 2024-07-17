@@ -4,7 +4,8 @@ export const lightTheme = {
   mainTextColor: 'rgb(0, 0, 0)',
   secondaryTextColor: 'rgb(255, 255, 255)',
   darkGreen: '#48A61D',
-  lightGreen: '#7CD055'
+  lightGreen: '#7CD055',
+  error: '#f54'
 };
 
 export const darkTheme = {

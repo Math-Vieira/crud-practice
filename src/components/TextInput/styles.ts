@@ -2,16 +2,18 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div``;
 
-export const Input = styled.input`
+export const Input = styled.input<{ error: boolean }>`
   width: 100%;
   padding: 5px;
   border-radius: 3px;
   outline: none;
-  border: 1px solid ${({ theme }) => theme.lightGreen};
+  border: 1px solid
+    ${({ theme, error }) => (error ? theme.error : theme.lightGreen)};
   font-size: 1rem;
 
   &:focus {
-    border: 2px solid ${({ theme }) => theme.darkGreen};
+    border: 1px solid
+      ${({ theme, error }) => (error ? theme.error : theme.darkGreen)};
   }
 `;
 
@@ -19,4 +21,12 @@ export const Label = styled.label`
   font-size: 1.2rem;
   margin-bottom: 5px;
   display: block;
+`;
+
+export const Error = styled.span`
+  color: ${({ theme }) => theme.error};
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+  font-weight: bold;
 `;
