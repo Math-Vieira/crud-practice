@@ -10,6 +10,14 @@ type Props = {
   onConfirm?: () => void;
   onCancel?: () => void;
   hasForm?: boolean;
+  showConfirmButton?: boolean;
+  onSubmit?: () => void;
+};
+
+type BodyContainerProps = {
+  children: React.ReactNode;
+  hasForm: boolean;
+  onSubmit?: () => void;
 };
 
 export const Modal = ({
@@ -19,13 +27,13 @@ export const Modal = ({
   CancelButtonText = 'Cancelar',
   hasForm = false,
   onConfirm,
-  onCancel
+  onCancel,
+  showConfirmButton = true,
+  onSubmit
 }: Props) => {
-  const ContentWrapper = hasForm ? S.ContentForm : S.Content;
-
   return (
     <S.Wrapper>
-      <ContentWrapper>
+      <BodyContainer hasForm={hasForm} onSubmit={onSubmit}>
         <S.ModalTitleContainer>
           <CustomerIcon />
           <S.ModalTitle>{title}</S.ModalTitle>
@@ -35,11 +43,26 @@ export const Modal = ({
           <Button buttonStyle="outline" onClick={onCancel}>
             {CancelButtonText}
           </Button>
-          <Button onClick={onConfirm} type={hasForm ? 'submit' : 'button'}>
-            {ConfirmButtonText}
-          </Button>
+          {showConfirmButton && (
+            <Button onClick={onConfirm} type={hasForm ? 'submit' : 'button'}>
+              {ConfirmButtonText}
+            </Button>
+          )}
         </S.ButtonContainer>
-      </ContentWrapper>
+      </BodyContainer>
     </S.Wrapper>
+  );
+};
+
+export const BodyContainer = ({
+  children,
+  hasForm,
+  onSubmit
+}: BodyContainerProps) => {
+  return (
+    <>
+      {hasForm && <S.ContentForm onSubmit={onSubmit}>{children}</S.ContentForm>}
+      {!hasForm && <S.Content>{children}</S.Content>}
+    </>
   );
 };

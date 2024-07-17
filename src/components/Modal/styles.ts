@@ -19,7 +19,7 @@ export const Content = styled.div`
   border-radius: 5px;
 `;
 
-export const ContentForm = styled.div`
+export const ContentForm = styled.form`
   background-color: ${({ theme }) => theme.mainColor};
   padding: 1rem;
   border-radius: 5px;
