@@ -1,0 +1,18 @@
+// import { queryClient } from '@/providers/query-client';
+import toast from 'react-hot-toast';
+import { api } from '../api';
+
+export type Payload = {};
+
+export type Response = {};
+
+export const {{service}} = async (payload: Payload): Promise<Response | undefined> => {
+  try {
+    const { data } = await api.put('/put', payload);
+    toast.success(data.message);
+
+    return data;
+  } catch (error: any) {
+    toast.error(error.response.data.message);
+  }
+};

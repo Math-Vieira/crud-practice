@@ -1,6 +1,5 @@
-// import { queryClient } from '@path-to-provider';
-// import { errorAlert } from '@path-to-alert-func';
-// import { successAlert } from '@path-to-alert-func';
+// import { queryClient } from '@/providers/query-client';
+import toast from 'react-hot-toast';
 import { api } from '../api';
 
 export type Payload = {};
@@ -9,9 +8,10 @@ export type Response = {};
 export const {{service}} = async (payload: Payload): Promise<Response | undefined> => {
   try {
     const { data } = await api.delete('/delete', payload);
-    // successAlert(data.message);
+    toast.success(data.message);
+
     return data;
-  } catch (error) {
-    // errorAlert(error.response.data.message);
+  } catch (error: any) {
+    toast.error(error.response.data.message);
   }
 };
