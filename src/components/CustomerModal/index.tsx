@@ -6,18 +6,21 @@ type Props = {
   disabled?: boolean;
   showConfirmButton?: boolean;
   cancelButtonText?: string;
+  confirmButtonText?: string;
 };
 
 export const CustomerModal = ({
   title,
   showConfirmButton,
-  cancelButtonText
+  cancelButtonText,
+  confirmButtonText
 }: Props) => {
   return (
     <Modal
       title={title}
       showConfirmButton={showConfirmButton}
-      CancelButtonText={cancelButtonText}
+      cancelButtonText={cancelButtonText}
+      ConfirmButtonText={confirmButtonText}
       modalBody={<S.Body>teste</S.Body>}
       hasForm
     />

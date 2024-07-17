@@ -6,7 +6,7 @@ type Props = {
   title?: string;
   modalBody?: React.ReactNode;
   ConfirmButtonText?: string;
-  CancelButtonText?: string;
+  cancelButtonText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
   hasForm?: boolean;
@@ -24,7 +24,7 @@ export const Modal = ({
   title = 'Modal title',
   modalBody = 'Add your modal body here',
   ConfirmButtonText = 'Confirmar',
-  CancelButtonText = 'Cancelar',
+  cancelButtonText = 'Cancelar',
   hasForm = false,
   onConfirm,
   onCancel,
@@ -41,7 +41,7 @@ export const Modal = ({
         <S.ModalBody>{modalBody}</S.ModalBody>
         <S.ButtonContainer>
           <Button buttonStyle="outline" onClick={onCancel}>
-            {CancelButtonText}
+            {cancelButtonText}
           </Button>
           {showConfirmButton && (
             <Button onClick={onConfirm} type={hasForm ? 'submit' : 'button'}>
